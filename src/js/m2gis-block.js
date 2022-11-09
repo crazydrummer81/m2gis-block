@@ -56,7 +56,9 @@ export default class M2GisBlock {
 	}
 
 	block() {
-		const _class = `m2gisblock${this.style.textPosition === 'right' ? ' m2gisblock_right' : ''}${this.style.mobileTextPosition === 'bottom' ? 'm2gisblock_mob-bottom' : ''}`;
+		const _class = `m2gisblock`
+			+ `${this.style.textPosition === 'right' ? ' m2gisblock_right' : ''}${this.style.mobileTextPosition === 'bottom' ? 'm2gisblock_mob-bottom' : ''}`
+			+ (this.style.additionalClass ? ` ${this.style.additionalClass.trim()}` : '');
 		return `<div class="${_class}">
 			<div class="m2gisblock__text">
 				<div class="m2gisblock__title"></div>
